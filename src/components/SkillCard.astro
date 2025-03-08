@@ -1,0 +1,40 @@
+---
+import { Icon } from "astro-icon/components"; // Astro Icons
+import { Apple, Layers, Code, Database, Feather } from "lucide-react"; // Lucide Icons
+
+interface SkillCardProps {
+    icon: string;
+    name: string;
+    description: string;
+    showDescription?: boolean;
+}
+
+const { icon, name, description, showDescription = true } = Astro.props as SkillCardProps;
+
+// ✅ Lucide Icon Mapping
+const lucideIcons: Record<string, any> = {
+    apple: Apple,       // iOS Development
+    flutter: Layers,    // Flutter Development (fallback)
+    nodejs: Code,       // Node.js
+    mongodb: Database,  // MongoDB
+};
+
+// ✅ Check if the `icon` is an image (PNG, JPG, SVG)
+const isImage = icon.endsWith(".png") || icon.endsWith(".jpg") || icon.endsWith(".jpeg") || icon.endsWith(".svg");
+
+const imagePath = isImage ? `${icon}` : null; // ✅ Use direct path
+---
+
+<div class="flex flex-col gap-2 h-skill-icon bg-white dark:bg-n700 p-4 rounded-md shadow-md">
+    <div class="w-12 h-12 flex items-center justify-center">
+        {
+            imagePath 
+            ? <img src={imagePath} alt={name} class="w-12 h-12 object-contain" />
+            : lucideIcons[icon]
+                ? <lucideIcons size={40} class="text-primary-light dark:text-primary-dark" />
+                : <Icon width={40} height={40} name={icon} class="text-primary-light dark:text-primary-dark" />
+        }
+    </div>
+    <h3 class="text-lg font-bold">{name}</h3>
+    { showDescription && <p class="text-n700 dark:text-n200">{description}</p> }
+</div>
