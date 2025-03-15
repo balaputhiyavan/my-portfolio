@@ -50,10 +50,17 @@ const workExperience:WorkExperience[] = [
         location: "Coimbatore",
         description: "Developed and maintained iOS applications using Swift, SwiftUI, and Xcode, ensuring seamless performance and user experience.",
         goals: [
-            "Developed and maintained iOS applications using Swift, SwiftUI, and Combine, improving UI responsiveness by 20%.",
+            "Developing and maintaining iOS applications using Swift, SwiftUI, and Combine.",
+            "Creating dynamic form templates that allow businesses to collect customized data from stores/customers.",
+            "Integrated Apple Maps API for location-based functionalities.",
             "Refactored and optimized legacy Swift projects, reducing crash rates by 30%.",
-            "Integrated RESTful APIs for seamless data communication between frontend and backend services.",
-            "Collaborated with designers and backend developers to implement user-friendly interfaces."
+            "Improved UI responsiveness by 20% through performance optimizations.",
+            "Conducted code reviews and collaborated with backend teams for seamless API integration.",
+            "Developed reusable code modules, resulting in reduced development time for future projects.",
+            "Reduced app crashes by optimizing code and conducting rigorous debugging sessions.",
+            "Enhanced user experience by designing and implementing intuitive user interfaces for iOS applications.",
+            "Built custom UI components to provide visually appealing and interactive experiences for users.",
+            "Ensured timely delivery of projects by managing priorities, setting milestones, and meeting deadlines."
         ],
         currentJob: true,
     },
