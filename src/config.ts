@@ -37,9 +37,15 @@ export const ME = {
         linkedin: "https://www.linkedin.com/in/m-balasubramanian/",
         resumeDoc: "resume.pdf",
     },
-    aboutMe: "🚀 iOS Developer with 2+ years of experience building high-performance Apple applications.\n\n" +
-"I specialize in Swift, SwiftUI, and Xcode, integrating third-party APIs seamlessly.\n\n" +
-"My skills also extend to Flutter & Dart, allowing me to work on cross-platform projects.\n\n" 
+    aboutMe: "Experienced iOS Developer specializing in Swift, SwiftUI, " + 
+"and Combine, with expertise in building scalable " + 
+"applications using MVVM architecture. Skilled in REST API " +
+"integration, CoreData management, and performance " + 
+"optimization to enhance user experience. Proficient in " +
+"Flutter for cross-platform development and leveraging " +
+"Firebase for backend solutions. Passionate about clean " +
+"architecture, maintainable code, and agile collaboration to " +
+"drive seamless app development." 
 }
 
 export const SOCIALS = [
