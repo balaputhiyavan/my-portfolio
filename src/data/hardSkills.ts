@@ -6,24 +6,40 @@ interface HardSkill {
 
 const hardSkills: HardSkill[] = [
   {
-    name: "iOS Development",
-    description: "Building high-performance iOS applications using Swift, SwiftUI, Xcode, and Combine for seamless data handling and backend integration.",
-    icon: "/swift.png"
+    name: "Swift & SwiftUI",
+    description: "Expert in building modern, responsive iOS UIs using declarative syntax and state management (Combine/Observation).",
+    icon: "simple-icons:swift"
   },
   {
-    name: "Cross-Platform Development", 
-    description: "Exploring Flutter and Dart in my free time to build scalable cross-platform apps.",
-    icon: "/flutter.png"
+    name: "Flutter & Dart",
+    description: "Developing cross-platform apps with a single codebase, leveraging Riverpod for state management and local storage.",
+    icon: "simple-icons:flutter"
   },
   {
-    name: "Firebase",
-    description: "Backend integration, authentication, and real-time database solutions using Firebase.",
-    icon: "/firebase.png"
+    name: "Clean Architecture",
+    description: "Implementing scalable MVVM architecture with Dependency Injection and Protocol Oriented Programming.",
+    icon: "layers-2"
   },
   {
-    name: "Git",
-    description: "Managing version control, efficient branching strategies, and collaboration using Git & GitHub.",
-    icon: "/git.png"
+    name: "Firebase & Backend",
+    description: "Integrating Firestore, Auth, and Cloud Functions for robust serverless backend solutions.",
+    icon: "simple-icons:firebase"
+  },
+  {
+    name: "Google Play, Git & Azure",
+    description: "Managing app releases via Google Play Console (Closed Testing) & Git version control utilizing Azure DevOps.",
+    icon: "simple-icons:azuredevops"
+  },
+  {
+    name: "API Integration",
+    description: "Connecting mobile apps with complex RESTful APIs and GraphQL services using URLSession/Dio.",
+    icon: "globe"
+  },
+
+  {
+    name: "Collaborative Tools",
+    description: "Working effectively within Agile teams using Figma for design handoffs and Postman for API testing.",
+    icon: "users"
   }
 ];
 

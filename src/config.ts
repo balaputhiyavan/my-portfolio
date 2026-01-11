@@ -15,7 +15,7 @@ export const SITE = {
 
 export const ME = {
     name: "Balasubramanian M",
-    profession: "iOS Developer | Flutter Enthusiast | Tech Explorer",
+    profession: "Mobile Developer (iOS & Flutter | MVVM | REST APIs | Firebase)",
     profileImage: "bb.jpeg",
     profileFacts: [
         {
@@ -37,48 +37,22 @@ export const ME = {
         linkedin: "https://www.linkedin.com/in/m-balasubramanian/",
         resumeDoc: "resume.pdf",
     },
-    aboutMe: "Experienced iOS Developer specializing in Swift, SwiftUI, " + 
-"and Combine, with expertise in building scalable " + 
-"applications using MVVM architecture. Skilled in REST API " +
-"integration, CoreData management, and performance " + 
-"optimization to enhance user experience. Proficient in " +
-"Flutter for cross-platform development and leveraging " +
-"Firebase for backend solutions. Passionate about clean " +
-"architecture, maintainable code, and agile collaboration to " +
-"drive seamless app development." 
+    aboutMe: "Experienced iOS & Flutter Developer passionate about building high-quality mobile applications. Expert in Swift, SwiftUI, and cross-platform development."
 }
 
 export const SOCIALS = [
-    // {
-    //     name: "Twitter",
-    //     url: "https://twitter.com/vicbox.dev",
-    //     icon: "twitter-x-fill",
-    //     show: true
-    // },
-    // {
-    //     name: "Facebook",
-    //     url: "https://www.facebook.com/vicbox.dev",
-    //     icon: "facebook-fill",
-    //     show: false
-    // },
+    {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/m-balasubramanian/",
+        icon: "linkedin-fill",
+        show: true
+    },
     {
         name: "Instagram",
         url: "https://www.instagram.com/balaputhiyavan_m?igsh=MW81b3Jna2RrbWIwdA==",
         icon: "instagram-fill",
         show: true
     },
-    // {
-    //     name: "LinkedIn",
-    //     url: "https://www.youtube.com/vicbox.dev",
-    //     icon: "youtube-fill",
-    //     show: true
-    // },
-    // {
-    //     name: "TikTok",
-    //     url: "https://tiktok.com/vicbox.dev",
-    //     icon: "tik-fill",
-    //     show: false
-    // },
     {
         name: "GitHub",
         url: "https://github.com/balaputhiyavan",

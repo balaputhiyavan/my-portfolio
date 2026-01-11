@@ -1,21 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ProfileInfo from "../components/ProfileInfo.astro";
-import ProfileActionButton from "../components/ProfileActionButton.astro";
-import TabsButtons from "../components/TabsButtons.tsx";
+import WhoAmI from "../components/WhoAmI.astro";
+import Skills from "../components/Skills.astro";
 import ProjectsCC from '@/components/ProjectsCC.astro';
-import AboutMeCC from "../components/AboutMeCC.astro";
-import ProfileFacts from "../components/ProfileFacts.astro";
+import ContactMe from "../components/ContactMe.astro";
 ---
 
-<Layout title="VicBox Dot Dev | Portfolio" description="A simple portfolio created with Astro." scrollSmooth={false}>
-    <>
-        <ProfileInfo/>
-        <ProfileFacts/>
-        <ProfileActionButton/>
-        <TabsButtons client:idle>
-            <ProjectsCC slot="portfolio"/>
-            <AboutMeCC slot="about"/>
-        </TabsButtons>
-    </>
+<Layout title="VicBox Dot Dev | Portfolio" description="A simple portfolio created with Astro.">
+    <main class="flex flex-col gap-10">
+        <WhoAmI />
+        <Skills />
+        <ProjectsCC />
+        <ContactMe />
+    </main>
 </Layout>

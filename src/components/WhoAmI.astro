@@ -1,0 +1,48 @@
+---
+import ProfileImage from "./ProfileImage.astro";
+import Social from "./Social.astro";
+import { ME } from '@/config';
+
+const { name, profession, aboutMe } = ME;
+---
+
+<section id="who-am-i" class="w-full min-h-[70vh] flex flex-col items-center justify-center py-20 px-4 relative overflow-hidden bg-slate-50/50 dark:bg-n900 transition-colors duration-500 snap-start">
+    <!-- Subtle Background Glows -->
+    <div class="absolute -top-24 -left-24 w-[500px] h-[500px] bg-gradient-to-br from-indigo-500/10 to-purple-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute -bottom-24 -right-24 w-[500px] h-[500px] bg-gradient-to-br from-cyan-500/10 to-blue-500/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="bg-white/70 dark:bg-slate-900/40 backdrop-blur-3xl border border-white/40 dark:border-white/5 p-8 md:p-16 rounded-[60px] shadow-[0_40px_100px_rgba(0,0,0,0.03)] dark:shadow-none flex flex-col md:flex-row items-center gap-12 w-full max-w-6xl z-10 animate-fade-in relative transition-all duration-700">
+        <!-- Soft Inner Gradient Fade -->
+        <div class="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-white/5 dark:from-white/[0.02] dark:to-transparent rounded-[60px] pointer-events-none"></div>
+
+        <div class="relative group shrink-0">
+            <!-- Precise Blue Glow from Screenshot -->
+            <div class="absolute -inset-4 bg-blue-400/20 dark:bg-blue-500/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div class="relative w-44 h-44 md:w-64 md:h-64 rounded-full overflow-hidden p-1 bg-gradient-to-tr from-blue-400 to-indigo-500 shadow-[0_0_40px_rgba(59,130,246,0.3)] group-hover:shadow-[0_0_60px_rgba(59,130,246,0.5)] transition-all duration-500">
+                <div class="w-full h-full rounded-full overflow-hidden border-[6px] border-white dark:border-slate-900 relative z-10">
+                     <ProfileImage />
+                </div>
+            </div>
+        </div>
+        
+        <div class="flex flex-col gap-6 text-center md:text-left relative z-20">
+            <div class="space-y-2">
+                <span class="text-[13px] font-black tracking-[0.2em] text-[#00c2cb] dark:text-[#22d3ee] uppercase block">HELLO, I AM</span>
+                <h1 class="text-4xl md:text-[64px] font-[900] text-slate-900 dark:text-white leading-[1.1] tracking-tight">
+                    {name}
+                </h1>
+                <p class="text-xl md:text-2xl font-semibold text-[#4f46e5] dark:text-[#a5b4fc] mt-3">
+                    {profession}
+                </p>
+            </div>
+            
+            <p class="text-[17px] md:text-lg text-slate-600 dark:text-slate-200/90 leading-relaxed max-w-2xl font-medium">
+                {aboutMe}
+            </p>
+            
+            <div class="flex justify-center md:justify-start pt-2">
+                <Social />
+            </div>
+        </div>
+    </div>
+</section>

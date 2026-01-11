@@ -1,0 +1,24 @@
+---
+import hardSkills from "@/data/hardSkills";
+
+import SkillCard from "./SkillCard.astro";
+---
+
+<section id="skills" class="w-full py-20 px-4 snap-start">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-n900 dark:text-white">My Skills</h2>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-primary-light to-accent-purple dark:from-primary-dark dark:to-accent-pink mx-auto rounded-full"></div>
+        </div>
+        
+        <div class="mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {hardSkills.map((skill) => (
+                    <SkillCard {...skill} showDescription={true}/>
+                ))}
+            </div>
+        </div>
+
+
+    </div>
+</section>

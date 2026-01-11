@@ -1,6 +1,6 @@
 ---
-import { Icon } from "astro-icon/components"; // Astro Icons
-import { Apple, Layers, Code, Database, Feather } from "lucide-react"; // Lucide Icons
+import { Icon } from "astro-icon/components";
+import { Layers2, Globe, FlaskConical, Users } from "lucide-react";
 
 interface SkillCardProps {
     icon: string;
@@ -11,30 +11,37 @@ interface SkillCardProps {
 
 const { icon, name, description, showDescription = true } = Astro.props as SkillCardProps;
 
-// ✅ Lucide Icon Mapping
+// Lucide Icon Mapping (Only for generic concepts)
 const lucideIcons: Record<string, any> = {
-    apple: Apple,       // iOS Development
-    flutter: Layers,    // Flutter Development (fallback)
-    nodejs: Code,       // Node.js
-    mongodb: Database,  // MongoDB
+    "layers-2": Layers2, // Architecture
+    globe: Globe,        // API
+    "flask-conical": FlaskConical, // Testing
+    users: Users,        // Collaboration
 };
 
-// ✅ Check if the `icon` is an image (PNG, JPG, SVG)
 const isImage = icon.endsWith(".png") || icon.endsWith(".jpg") || icon.endsWith(".jpeg") || icon.endsWith(".svg");
+const isSimpleIcon = icon.startsWith("simple-icons:");
+const imagePath = isImage ? `${icon}` : null;
 
-const imagePath = isImage ? `${icon}` : null; // ✅ Use direct path
+// Determine grid span based on description presence (Hard vs Soft skills layout)
+const cardClass = showDescription 
+    ? "glass-panel p-6 rounded-[32px] h-full flex flex-col gap-4 hover:border-accent-cyan/50 transition-all duration-300 hover:scale-[1.02] group" 
+    : "glass-panel p-6 rounded-[32px] h-full flex flex-col items-center justify-center gap-3 hover:border-accent-pink/50 transition-all duration-300 hover:scale-105 text-center group";
 ---
 
-<div class="flex flex-col gap-2 h-skill-icon bg-white dark:bg-n700 p-4 rounded-md shadow-md">
-    <div class="w-12 h-12 flex items-center justify-center">
+<div class={cardClass}>
+    <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-white/5 p-2.5 group-hover:bg-primary-light/10 dark:group-hover:bg-primary-dark/10 transition-colors duration-300">
         {
             imagePath 
-            ? <img src={imagePath} alt={name} class="w-12 h-12 object-contain" />
-            : lucideIcons[icon]
-                ? <lucideIcons size={40} class="text-primary-light dark:text-primary-dark" />
-                : <Icon width={40} height={40} name={icon} class="text-primary-light dark:text-primary-dark" />
+            ? <img src={imagePath} alt={name} class="w-full h-full object-contain" />
+            : (lucideIcons[icon] 
+                ? <div class="text-primary-light dark:text-primary-dark w-full h-full [&>svg]:w-full [&>svg]:h-full">{() => { const Icon = lucideIcons[icon]; return <Icon /> }}</div>
+                : <Icon name={icon} class="w-full h-full text-primary-light dark:text-primary-dark" />)
         }
     </div>
-    <h3 class="text-lg font-bold">{name}</h3>
-    { showDescription && <p class="text-n700 dark:text-n200">{description}</p> }
+    
+    <div>
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">{name}</h3>
+        { showDescription && <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed font-medium">{description}</p> }
+    </div>
 </div>

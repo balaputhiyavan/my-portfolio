@@ -11,14 +11,17 @@ const allProjects = (await getCollection('projects'))
 ---
 
 <!--Grid section to show the projects in to columns -->
-<>
-    <section class="mt-10 px-4 w-full">
-        <div class="mb-4">
-            <h2 class="text-3xl font-bold mb-4">Projects</h2>
+<section id="projects" class="w-full py-20 px-4 snap-start">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-n900 dark:text-white">Featured Projects</h2>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-accent-purple to-accent-pink mx-auto rounded-full"></div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {
-                allProjects.map((project) => (
+                allProjects.map((project, index) => (
+                    <div class="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                         <ProjectCard
                                 id={project.id}
                                 title={project.data.title}
@@ -26,16 +29,15 @@ const allProjects = (await getCollection('projects'))
                                 tags={project.data.tags}
                                 cover={project.data.cover}
                         />
+                    </div>
                 ))
             }
         </div>
-    </section>
-    <div class="flex justify-center mt-10">
-        <a href="/projects" class={buttonVariants({ variant: "default" }) + "text-n700 bg-primary-light dark:bg-primary-dark hover:bg-primary-hover-light dark:hover:bg-primary-hover-dark"}>
-            See All Projects
-        </a>
+        
+        <div class="flex justify-center mt-16">
+            <a href="/projects" class="px-8 py-3 rounded-full font-bold text-white bg-gradient-to-r from-primary-light to-accent-purple dark:from-primary-dark dark:to-accent-pink hover:opacity-90 transition-opacity shadow-lg hover:shadow-primary-light/50 dark:hover:shadow-primary-dark/50">
+                View All Projects
+            </a>
+        </div>
     </div>
-</>
-
-
-
+</section>
