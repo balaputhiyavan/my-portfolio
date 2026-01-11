@@ -91,10 +91,13 @@ const pathname = Astro.url.pathname;
         const links = document.querySelectorAll('.nav-link');
         
         if (!indicator || !list) return;
+        const navIndicator = indicator as HTMLElement;
+        const navList = list as HTMLElement;
 
-        function updateIndicator(el) {
+        function updateIndicator(el: any) {
+            if (!el || !(el instanceof HTMLElement)) return;
             const rect = el.getBoundingClientRect();
-            const parentRect = list.getBoundingClientRect();
+            const parentRect = navList.getBoundingClientRect();
             
             // Underline positioning
             // We want it roughly the width of the text, so we calculate based on the element width minus some padding
@@ -103,18 +106,18 @@ const pathname = Astro.url.pathname;
             
             const widthCorrection = 24; 
             
-            indicator.style.width = `${rect.width - widthCorrection}px`; 
-            indicator.style.height = `3px`; // Fixed height for underline
+            navIndicator.style.width = `${rect.width - widthCorrection}px`; 
+            navIndicator.style.height = `3px`; // Fixed height for underline
             
             // Center horizontal: left + (correction / 2)
-            indicator.style.left = `${rect.left - parentRect.left + (widthCorrection / 2)}px`; 
+            navIndicator.style.left = `${rect.left - parentRect.left + (widthCorrection / 2)}px`; 
             
             // Position at bottom: top + height - specific offset to sit nicely under text
             // rect.height is the full link block. 
             // We want it at the bottom edge.
-            indicator.style.top = `${rect.bottom - parentRect.top - 4}px`; // -4px to pull it up slightly
+            navIndicator.style.top = `${rect.bottom - parentRect.top - 4}px`; // -4px to pull it up slightly
             
-            indicator.style.opacity = '1';
+            navIndicator.style.opacity = '1';
         }
 
         // Mouse Enter: Follow cursor
@@ -128,7 +131,7 @@ const pathname = Astro.url.pathname;
              if (activeLink) {
                  updateIndicator(activeLink);
              } else {
-                 indicator.style.opacity = '0';
+                 navIndicator.style.opacity = '0';
              }
         });
         

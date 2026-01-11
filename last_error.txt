@@ -1,0 +1,78 @@
+﻿23:03:47 [content] Syncing content
+23:03:48 [content] Synced content
+23:03:48 [types] Generated 1.18s
+23:03:48 [check] Getting diagnostics for Astro files in D:\Portfolio\my-portfolio...
+[96msrc/components/BackBtn.astro[0m:[93m3[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Button' is declared but its value is never read.
+
+[7m3[0m import {Button} from "./ui/button";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/Navbar.astro[0m:[93m12[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'pathname' is declared but its value is never read.
+
+[7m12[0m const pathname = Astro.url.pathname;
+[7m  [0m [93m      ~~~~~~~~[0m
+[96msrc/components/Navbar.astro[0m:[93m10[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'SITE' is declared but its value is never read.
+
+[7m10[0m import {SITE} from "../config";
+[7m  [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/Navbar.astro[0m:[93m7[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'menu' is declared but its value is never read.
+
+[7m7[0m import {menu} from "../data/menu";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/Navbar.astro[0m:[93m3[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Icon' is declared but its value is never read.
+
+[7m3[0m import {Icon} from "astro-icon/components";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/components/Navbar.astro[0m:[93m120[0m:[93m13[0m - [91merror[0m[90m ts(18047): [0m'indicator' is possibly 'null'.
+
+[7m120[0m             indicator.style.opacity = '1';
+[7m   [0m [91m            ~~~~~~~~~[0m
+
+[96msrc/components/ProjectsCC.astro[0m:[93m7[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'buttonVariants' is declared but its value is never read.
+
+[7m7[0m import {buttonVariants} from "./ui/button";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/components/SkillCard.astro[0m:[93m23[0m:[93m7[0m - [93mwarning[0m[90m ts(6133): [0m'isSimpleIcon' is declared but its value is never read.
+
+[7m23[0m const isSimpleIcon = icon.startsWith("simple-icons:");
+[7m  [0m [93m      ~~~~~~~~~~~~[0m
+
+[96msrc/components/icons/LinkedIn.astro[0m:[93m2[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Icon' is declared but its value is never read.
+
+[7m2[0m import {Icon} from "astro-icon/components";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/layouts/Layout.astro[0m:[93m3[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'cn' is declared but its value is never read.
+
+[7m3[0m import {cn} from "../lib/utils";
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[96msrc/lib/utils.ts[0m:[93m21[0m:[93m31[0m - [93mwarning[0m[90m ts(80004): [0mJSDoc types may be moved to TypeScript types.
+
+[7m21[0m export const formatDatetime = (datetime: any) => {
+[7m  [0m [93m                              ~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/lib/utils.ts[0m:[93m10[0m:[93m17[0m - [93mwarning[0m[90m ts(80004): [0mJSDoc types may be moved to TypeScript types.
+
+[7m10[0m export function cn(...inputs: ClassValue[]) {
+[7m  [0m [93m                ~~[0m
+
+[96msrc/pages/blog/[id].astro[0m:[93m19[0m:[93m28[0m - [93mwarning[0m[90m ts(6133): [0m'publishDate' is declared but its value is never read.
+
+[7m19[0m const {title, description, publishDate, tags, cover} = post.data;
+[7m  [0m [93m                           ~~~~~~~~~~~[0m
+
+[96msrc/pages/blog/index.astro[0m:[93m5[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'ClockIcon' is declared but its value is never read.
+
+[7m5[0m import ClockIcon from '@/icons/time-line.svg';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+[96msrc/pages/blog/index.astro[0m:[93m4[0m:[93m1[0m - [93mwarning[0m[90m ts(6133): [0m'Image' is declared but its value is never read.
+
+[7m4[0m import {Image} from 'astro:assets';
+[7m [0m [93m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+Result (46 files): 
+- 1 error
+- 0 warnings
+- 14 hints
+

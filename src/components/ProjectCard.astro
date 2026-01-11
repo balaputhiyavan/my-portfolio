@@ -20,7 +20,7 @@ const { title, tags, cover, id } = Astro.props;
             
             <!-- Tags Overlay -->
             <div class="absolute top-4 right-4 z-20 flex flex-wrap justify-end gap-2">
-                {tags.slice(0, 2).map(tag => (
+                {tags.slice(0, 2).map((tag: string) => (
                     <span class="px-3 py-1 text-xs font-medium text-white bg-black/50 backdrop-blur-md rounded-full border border-white/10">
                         {tag}
                     </span>
@@ -35,7 +35,7 @@ const { title, tags, cover, id } = Astro.props;
             </h4>
             <div class="flex items-center gap-2 text-primary-light dark:text-primary-dark font-medium text-sm group-hover:translate-x-2 transition-transform duration-300">
                 View Project 
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" h="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </div>
         </div>
     </div>
