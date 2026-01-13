@@ -12,42 +12,43 @@ import {SITE} from "../config";
 const pathname = Astro.url.pathname;
 ---
 
-<nav class="bg-white/80 dark:bg-slate-950/70 backdrop-blur-md fixed w-full z-40 top-0 start-0 border-b border-slate-200/50 dark:border-white/5 transition-colors duration-500" id="menu">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:px-6">
-        <!-- Logo removed as requested -->
-        <div class="hidden md:block"></div>
+<nav class="fixed w-full z-40 top-0 start-0 transition-all duration-500 border-b border-transparent translate-y-0" id="menu">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 md:px-8">
+        <div class="flex items-center">
+            <a href="/" class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white group">
+                <span class="text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-500 transition-colors">B</span>ala M<span>.</span>
+            </a>
+        </div>
 
-        <div class="flex md:order-1 space-x-3 md:space-x-4 rtl:space-x-reverse items-center">
+        <div class="flex md:order-2 space-x-3 items-center">
+            <div class="hidden md:block">
+                <ThemeToggle />
+            </div>
             <button id="btn-menu" data-collapse-toggle="navbar-sticky" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-xl md:hidden hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800 focus:outline-none transition-colors"
                     aria-controls="navbar-sticky" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                     viewBox="0 0 17 14">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M1 1h15M1 7h15M1 13h15"/>
+                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
                 </svg>
             </button>
         </div>
-        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 ml-auto" id="navbar-sticky">
-            <!-- Navigation Links -->
-            <ul class="relative flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-2 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray-700 bg-gray-50 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent items-center" id="nav-list">
-                <!-- Sliding Indicator (Underline style) -->
-                <div id="nav-indicator" class="absolute hidden md:block h-[3px] bg-slate-900 dark:bg-white rounded-full transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] -z-10 opacity-0"></div>
 
+        <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul class="flex flex-col p-4 md:p-1 mt-4 font-medium border border-gray-100 rounded-2xl md:space-x-4 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-white/50 dark:bg-slate-900/50 md:bg-transparent backdrop-blur-lg md:backdrop-blur-none items-center" id="nav-list">
                 <li>
-                    <a href="#who-am-i" data-text="Bio" class="nav-link block py-2 px-5 rounded md:p-0 text-slate-500 dark:text-slate-400 relative z-10 hover:text-slate-900 dark:hover:text-white transition-colors duration-300 text-center">Bio</a>
+                    <a href="/#who-am-i" class="nav-link block py-2 px-4 rounded-xl text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-white transition-all duration-300">Bio</a>
                 </li>
                 <li>
-                    <a href="#skills" data-text="Skills" class="nav-link block py-2 px-5 rounded md:p-0 text-slate-500 dark:text-slate-400 relative z-10 hover:text-slate-900 dark:hover:text-white transition-colors duration-300 text-center">Skills</a>
+                    <a href="/#skills" class="nav-link block py-2 px-4 rounded-xl text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-white transition-all duration-300">Skills</a>
                 </li>
                 <li>
-                    <a href="#projects" data-text="Projects" class="nav-link block py-2 px-5 rounded md:p-0 text-slate-500 dark:text-slate-400 relative z-10 hover:text-slate-900 dark:hover:text-white transition-colors duration-300 text-center">Projects</a>
+                    <a href="/#projects" class="nav-link block py-2 px-4 rounded-xl text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-white transition-all duration-300">Projects</a>
                 </li>
                 <li>
-                    <a href="#contact" data-text="Contact" class="nav-link block py-2 px-5 rounded md:p-0 text-slate-500 dark:text-slate-400 relative z-10 hover:text-slate-900 dark:hover:text-white transition-colors duration-300 text-center">Contact</a>
+                    <a href="/#contact" class="nav-link block py-2 px-4 rounded-xl text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-white transition-all duration-300">Contact</a>
                 </li>
-                <li class="pl-10 md:pl-12 border-l border-gray-200 dark:border-gray-700 ml-8 md:ml-10 flex items-center h-8">
+                <li class="md:hidden pt-4 mt-4 border-t border-gray-200 dark:border-gray-700 w-full flex justify-center">
                     <ThemeToggle />
                 </li>
             </ul>
@@ -56,112 +57,72 @@ const pathname = Astro.url.pathname;
 </nav>
 
 <style>
-    /* Active link text color if needed */
     .nav-link.active-section {
-        @apply text-slate-900 dark:text-white font-bold;
+        @apply text-indigo-600 dark:text-white font-semibold bg-indigo-50/50 dark:bg-white/10;
     }
 
-    /* Prevent layout shift on bold hover/active */
-    .nav-link::after {
-        content: attr(data-text);
-        display: block;
-        height: 0;
-        visibility: hidden;
-        overflow: hidden;
-        user-select: none;
-        pointer-events: none;
-        font-weight: 700; /* Match bold weight */
-        text-align: center;
+    /* Scrolled state for navbar */
+    nav.scrolled {
+        @apply bg-white/70 dark:bg-slate-950/70 backdrop-blur-xl border-slate-200/50 dark:border-white/10 py-2;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     }
 </style>
 
 <script>
-    function toggleNav() {
+    function initNavbar() {
+        const menu = document.getElementById('menu');
         const btnMenu = document.getElementById('btn-menu');
         const navbar = document.getElementById('navbar-sticky');
 
-        btnMenu?.addEventListener('click', function () {
+        // Scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                menu?.classList.add('scrolled');
+            } else {
+                menu?.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        btnMenu?.addEventListener('click', () => {
             navbar?.classList.toggle('hidden');
         });
-    }
 
-    function initNavIndicator() {
-        const indicator = document.getElementById('nav-indicator');
-        const list = document.getElementById('nav-list');
-        const links = document.querySelectorAll('.nav-link');
-        
-        if (!indicator || !list) return;
-        const navIndicator = indicator as HTMLElement;
-        const navList = list as HTMLElement;
-
-        function updateIndicator(el: any) {
-            if (!el || !(el instanceof HTMLElement)) return;
-            const rect = el.getBoundingClientRect();
-            const parentRect = navList.getBoundingClientRect();
-            
-            // Underline positioning
-            // We want it roughly the width of the text, so we calculate based on the element width minus some padding
-            // The links have px-5 (20px each side = 40px total). 
-            // Let's make the line width = rect.width - 24px (allowing a bit of overhang or just tighter than full pad)
-            
-            const widthCorrection = 24; 
-            
-            navIndicator.style.width = `${rect.width - widthCorrection}px`; 
-            navIndicator.style.height = `3px`; // Fixed height for underline
-            
-            // Center horizontal: left + (correction / 2)
-            navIndicator.style.left = `${rect.left - parentRect.left + (widthCorrection / 2)}px`; 
-            
-            // Position at bottom: top + height - specific offset to sit nicely under text
-            // rect.height is the full link block. 
-            // We want it at the bottom edge.
-            navIndicator.style.top = `${rect.bottom - parentRect.top - 4}px`; // -4px to pull it up slightly
-            
-            navIndicator.style.opacity = '1';
-        }
-
-        // Mouse Enter: Follow cursor
-        links.forEach(link => {
-            link.addEventListener('mouseenter', (e) => updateIndicator(e.target));
-        });
-
-        // Mouse Leave: Snap back to active section
-        list.addEventListener('mouseleave', () => {
-             const activeLink = document.querySelector('.nav-link.active-section');
-             if (activeLink) {
-                 updateIndicator(activeLink);
-             } else {
-                 navIndicator.style.opacity = '0';
-             }
-        });
-        
-        // Scroll Observer
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const id = entry.target.getAttribute('id');
-                const link = document.querySelector(`.nav-link[href="#${id}"]`);
-                
-                if (entry.isIntersecting && link) {
-                   links.forEach(l => l.classList.remove('active-section'));
-                   link.classList.add('active-section');
-                   
-                   // Only update indicator if user isn't hovering (prevents fighting cursor)
-                   if (!list.matches(':hover')) {
-                       updateIndicator(link);
-                   }
+        // Close mobile menu on link click
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 768) {
+                    navbar?.classList.add('hidden');
                 }
             });
-        }, { threshold: 0.5 });
-        
-        sections.forEach(sec => observer.observe(sec));
+        });
+
+        // Intersection Observer for active state
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    const activeLink = document.querySelector(`.nav-link[href$="#${id}"]`);
+                    
+                    if (activeLink) {
+                        navLinks.forEach(link => link.classList.remove('active-section'));
+                        activeLink.classList.add('active-section');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        const sections = document.querySelectorAll('section[id]');
+        sections.forEach(section => observer.observe(section));
     }
 
-    toggleNav();
-    initNavIndicator();
-
-    document.addEventListener("astro:after-swap", () => {
-        toggleNav();
-        initNavIndicator();
-    });
+    initNavbar();
+    document.addEventListener('astro:after-swap', initNavbar);
 </script>

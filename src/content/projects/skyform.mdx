@@ -1,12 +1,12 @@
 ---
 title: SkyForm
-summary: An enterprise-grade iOS application for offline survey data collection. Built with SwiftUI and Clean Architecture (MVVM), it leverages Core Data for robust local persistence and Combine for reactive state management. Designed for field professionals requiring reliable data entry in low-connectivity environments.
+summary: An enterprise-grade iOS application for offline survey data collection. Built with SwiftUI and the MVVM architecture pattern, it leverages an SQL database for robust local data management and persistence, and Combine for reactive state management. Designed for field professionals requiring reliable data entry in low-connectivity environments.
 tags:
     - iOS
     - SwiftUI
-    - Clean Arch
     - MVVM
-    - ""
+    - SQL
+    - SQLite
 startDate: 2024-06-01
 endDate: 2024-08-15
 author: VicBox
@@ -16,7 +16,7 @@ ogImage: './images/skyform/cover.png'
 ---
 
 ## Overview
-**SkyForm** is a native iOS application engineered for reliability and scalability. It serves as a comprehensive tool for collecting survey data in the field. By adopting strict **Clean Architecture** principles and **MVVM**, the codebase is testable, modular, and easy to maintain. It showcases advanced usage of **SwiftUI** for declarative UI and **Core Data** for complex object graph persistence.
+**SkyForm** is a native iOS application engineered for reliability and scalability. It serves as a comprehensive tool for collecting survey data in the field. By adopting the **MVVM (Model-View-ViewModel)** architecture, the codebase is testable, modular, and easy to maintain. It showcases advanced usage of **SwiftUI** for declarative UI and an **SQL database** (SQLite) for complex object graph persistence and local data management.
 
 ---
 
@@ -27,7 +27,7 @@ ogImage: './images/skyform/cover.png'
 
 ## 🎯 Goal
 1.  **Reliability**: Ensure zero data loss during offline field operations.
-2.  **Architecture**: Demonstrate industry-standard Clean Architecture with Dependency Injection.
+2.  **Architecture**: Demonstrate industry-standard MVVM architecture with Dependency Injection.
 3.  **UX/UI**: Provide a modern, native iOS experience that is intuitive for non-technical users.
 
 ---
@@ -35,15 +35,13 @@ ogImage: './images/skyform/cover.png'
 ## ✨ Solution
 
 ### Core Features
-1.  **Offline-First**: All data is stored locally in Core Data and synced when online.
+1.  **Offline-First**: All data is stored locally in an SQL database and synced when online.
 2.  **Dynamic Forms**: UI renders based on JSON schema configurations for flexible survey types.
-3.  **Clean Architecture**: Separation of concerns into Domain, Data, and Presentation layers.
-4.  **Reactive Bindings**: Extensive use of `Combine` publishers for real-time validation.
-
+3.  **MVVM Architecture**: Separation of concerns into Model, View, and ViewModel.
 ### Tech Stack
+-   **MVVM Architecture**: Comprehensive use of Model-View-ViewModel to decouple UI logic and state.
 -   **SwiftUI**: Modern declarative UI.
--   **Core Data**: Local persistence.
+-   **SQL Database**: SQLite for local data management.
 -   **Combine**: Reactive functional programming.
--   **MVVM**: Presentation pattern.
 
 ---

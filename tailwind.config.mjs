@@ -25,9 +25,9 @@ export default {
 			},
 			colors: {
 				// Light mode colors
-				'light-theme': '#f0f2f5',
-				'primary-light': '#3b82f6',
-				'primary-hover-light': '#2563eb',
+				'light-theme': '#fbfcfd',
+				'primary-light': '#4361ee',
+				'primary-hover-light': '#3a56e4',
 
 				// Dark mode colors
 				'dark-theme': '#030712',
@@ -40,16 +40,16 @@ export default {
 				'accent-cyan': '#22d3ee',
 
 				// Neutrals
-				'n950': '#030712',
-				'n900': '#111827',
-				'n800': '#1f2937',
-				'n700': '#374151',
-				'n600': '#4b5563',
-				'n500': '#6b7280',
-				'n400': '#9ca3af',
-				'n300': '#d1d5db',
-				'n200': '#e5e7eb',
-				'n100': '#f3f4f6',
+				'n950': '#0f172a',
+				'n900': '#1e293b',
+				'n800': '#334155',
+				'n700': '#475569',
+				'n600': '#64748b',
+				'n500': '#94a3b8',
+				'n400': '#cbd5e1',
+				'n300': '#e2e8f0',
+				'n200': '#f1f5f9',
+				'n100': '#f8fafc',
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

@@ -5,20 +5,103 @@
 @layer base {
     :root {
         --radius: 0.75rem;
+        --mesh-gradient: radial-gradient(at 0% 0%, hsla(210, 80%, 98%, 1) 0, transparent 50%),
+            radial-gradient(at 50% 0%, hsla(225, 90%, 96%, 1) 0, transparent 50%),
+            radial-gradient(at 100% 0%, hsla(280, 80%, 97%, 1) 0, transparent 50%);
+    }
+
+    .dark {
+        --mesh-gradient: radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+            radial-gradient(at 50% 0%, hsla(225, 40%, 35%, 1) 0, transparent 50%),
+            radial-gradient(at 100% 0%, hsla(339, 60%, 40%, 1) 0, transparent 50%);
     }
 }
 
 @layer utilities {
     .glass-panel {
-        @apply bg-white/10 dark:bg-black/20 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-xl;
+        @apply bg-white/40 dark:bg-black/40 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-2xl;
     }
 
     .text-gradient {
-        @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-light to-accent-purple dark:from-primary-dark dark:to-accent-pink;
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400;
     }
 
-    .glow-text {
-        @apply drop-shadow-[0_0_15px_rgba(255, 255, 255, 0.3)];
+    .mesh-bg {
+        background-color: #fbfcfd;
+        background-image: var(--mesh-gradient);
+    }
+
+    .dark .mesh-bg {
+        background-color: hsla(253, 16%, 7%, 1);
+    }
+
+    .animate-reveal {
+        opacity: 0;
+        animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-fade-up {
+        opacity: 0;
+        animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes reveal {
+        from {
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    @keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .reveal-on-scroll {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-on-scroll.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .vibrant-glow {
+        position: relative;
+    }
+
+    .vibrant-glow::after {
+        content: '';
+        position: absolute;
+        inset: -10px;
+        background: inherit;
+        filter: blur(20px);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        z-index: -1;
+        border-radius: inherit;
+    }
+
+    .vibrant-glow:hover::after {
+        opacity: 0.5;
     }
 }
 
@@ -36,12 +119,12 @@ h3,
 h4,
 h5,
 h6 {
-    @apply font-heading;
+    @apply font-heading tracking-tight;
 }
 
-/* Scrollbar */
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -49,9 +132,10 @@ h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-    @apply bg-n300 dark:bg-n700 rounded-full;
+    @apply bg-slate-400/30 hover:bg-slate-400/50 rounded-full transition-colors;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    @apply bg-n500 dark:bg-n500;
+.scroll-progress {
+    @apply fixed top-0 left-0 h-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 z-50 transition-all duration-150;
+    width: 0%;
 }
